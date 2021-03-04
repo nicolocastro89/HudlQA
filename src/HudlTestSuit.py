@@ -1,5 +1,6 @@
 import sys
 sys.path.append('.')
+import config
 import unittest
 from TestCases.HudlLogin import HudlLoginTestCase, HudlMobileLoginTestCase
 
@@ -26,5 +27,7 @@ def suite():
     return suite
 
 if __name__ == '__main__':
+    if not config.login_params['username'] or not config.login_params['password']:
+        raise Exception('A valid username and password have to be provided in the config.py file to launch the tests')
     runner = unittest.TextTestRunner()
     runner.run(suite())
