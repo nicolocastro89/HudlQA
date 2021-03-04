@@ -12,7 +12,7 @@ login_params = dict(
 driver_path = 'chromedriver.exe'
 
 #If True will run the tests in headless mode (without showing the opened pages)
-headless = True
+headless = False
 
 #default wait time in seconds used when waiting for an element to load 
 # before launching an exception
